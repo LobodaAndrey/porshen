@@ -30,42 +30,6 @@
       type="text/css"
       href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"
     />
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.6.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.6.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.6.1/firebase-database-compat.js"></script>
-    <script
-      defer
-      src="/__/firebase/9.6.1/firebase-firestore-compat.js"
-    ></script>
-    <script
-      defer
-      src="/__/firebase/9.6.1/firebase-functions-compat.js"
-    ></script>
-    <script
-      defer
-      src="/__/firebase/9.6.1/firebase-messaging-compat.js"
-    ></script>
-    <script defer src="/__/firebase/9.6.1/firebase-storage-compat.js"></script>
-    <script
-      defer
-      src="/__/firebase/9.6.1/firebase-analytics-compat.js"
-    ></script>
-    <script
-      defer
-      src="/__/firebase/9.6.1/firebase-remote-config-compat.js"
-    ></script>
-    <script
-      defer
-      src="/__/firebase/9.6.1/firebase-performance-compat.js"
-    ></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
   </head>
   <body>
     <header
@@ -323,8 +287,26 @@
       src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"
     ></script>
     <script src="js/common.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    </script>
+    <script type="module">
+      // ...
 
-    <script>
+      // TODO: Replace the following with your app's Firebase project configuration
+      const firebaseConfig = {
+        // apiKey: "YOUR_API_KEY",
+        // Configure the above client key at https://console.cloud.google.com/apis/credentials
+        // Restrict to: *.your-domain.com/* (and localhost for testing)
+        // Restrict to: Google Cloud Firestore API, Identity Toolkit API
+        // authDomain: "your-app.firebaseapp.com",
+        projectId: "porshen-ck",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
+    <!-- <script>
       document.addEventListener("DOMContentLoaded", function () {
         const loadEl = document.querySelector("#load");
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
@@ -364,6 +346,6 @@
             "Error loading the Firebase SDK, check the console.";
         }
       });
-    </script>
+    </script> -->
   </body>
 </html>
